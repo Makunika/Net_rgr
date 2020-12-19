@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -33,7 +34,6 @@ namespace Net_rgr.Modules
 
         public void DoWork()
         {
-            animalTable.Clear();
             DoParseOnePage(urlStart);
         }
 
@@ -57,7 +57,8 @@ namespace Net_rgr.Modules
 
 
                     var task = ParseOneAnimal(animalName);
-
+                    
+                    task.Wait();
                     step++;
                     if (step >= steps || step >= maxStep)
                     {
@@ -99,33 +100,43 @@ namespace Net_rgr.Modules
                     Img = document.QuerySelector(".infobox-image img")?.GetAttribute("src").Trim().Substring(2)
                 };
 
-                //try
-                //{
-                //    System.Data.DataRow[] animalsInDb = animalTable.Select("name = " + animalName);
-                //    foreach (var animalDbRow in animalsInDb)
-                //    {
-                //        animalDbRow.BeginEdit();
-                //        var animalDb = (rgrNetDataSet.AnimalRow)animalDbRow;
-                //        animalDb.about = animal.About;
-                //        animalDb.img = new System.Net.WebClient().DownloadData(animal.Img);
-                //        animalDb.name = animal.Name;
-                //        animalDbRow.EndEdit();
-                //    }
-                //}
-                //catch(Exception)
-                //{
 
-                //}
-
-                if (animal.Img == null)
+                var animalRow = animalTable.AsEnumerable().FirstOrDefault(row => animalName.Contains(row.Field<String>("name")));
+                if (animalRow != null)
                 {
-                    AppendToDb(animal.Name, animal.About, null);
+                    animalRow.about = animal.About;
+                    animalRow.name = animal.Name;
+                    if (animal.Img == null)
+                    {
+                        animalRow.img = null;
+                    }
+                    else
+                    {
+                        animalRow.img = new WebClient().DownloadData("https://" + animal.Img);
+                    }
+
                 }
                 else
                 {
-                    AppendToDb(animal.Name, animal.About, new WebClient().DownloadData("https://" + animal.Img));
-                }  
-                
+                    if (animal.Img == null)
+                    {
+                        AppendToDb(animal.Name, animal.About, null);
+                    }
+                    else
+                    {
+                        AppendToDb(animal.Name, animal.About, new WebClient().DownloadData("https://" + animal.Img));
+                    }
+                }
+
+
+
+                i++;
+                progress.Report((int)(Math.Floor((double)i / ((double)steps / 100.0))));
+
+
+
+
+
                 Console.WriteLine(animal.Name + " parsed! " + i);
                 
             }
@@ -139,8 +150,6 @@ namespace Net_rgr.Modules
                 DataRow CurrentRow = animalTable.NewRow();
                 CurrentRow.ItemArray = RowArray;
                 animalTable.Rows.Add(CurrentRow);
-                i++;
-                progress.Report((int)(Math.Floor((double)i/((double)steps/100.0))));
             }
         }
 

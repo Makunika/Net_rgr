@@ -23,14 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a795e18-65d9-4e68-94e9-15d2da67246e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Net_rgr/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Net_rgr/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Net_rgr/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Net_rgr/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Net_rgr/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Net_rgr/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Net_rgr/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Net_rgr/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Net_rgr/App.config" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/App.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_rgr/Modules/AnimalsUpdater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/Modules/AnimalsUpdater.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Net_rgr/Net_rgr.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/Net_rgr.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Net_rgr/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Net_rgr/Properties/Settings.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/Properties/Settings.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Net_rgr/Properties/Settings.settings" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/Properties/Settings.settings" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_rgr/bin/Debug/Net_rgr.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/bin/Debug/Net_rgr.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Net_rgr/bin/Debug/Net_rgr.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/bin/Debug/Net_rgr.exe.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_rgr/bin/Debug/Net_rgr.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/bin/Debug/Net_rgr.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.csproj.FileListAbsolute.txt" afterDir="false" />
@@ -38,6 +39,7 @@
       <change beforePath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Net_rgr/obj/Debug/TempPE/rgrNetDataSet.Designer.cs.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/obj/Debug/TempPE/rgrNetDataSet.Designer.cs.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +53,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Net_rgr/Program.cs" />
+        <option value="$PROJECT_DIR$/Net_rgr/Properties/Settings.settings" />
         <option value="$PROJECT_DIR$/Net_rgr/Modules/AnimalsUpdater.cs" />
       </list>
     </option>
@@ -99,6 +102,8 @@
       <updated>1608116589929</updated>
       <workItem from="1608116635159" duration="3246000" />
       <workItem from="1608219932688" duration="3265000" />
+      <workItem from="1608239914518" duration="38000" />
+      <workItem from="1608287782326" duration="709000" />
     </task>
     <servers />
   </component>
@@ -117,6 +122,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
@@ -126,26 +132,26 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="156" y="95" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1608223120773" />
-    <state width="1397" height="449" key="GridCell.Tab.0.bottom" timestamp="1608223296226">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="739" height="236" key="GridCell.Tab.0.bottom" timestamp="1608288493714">
+      <screen x="78" y="0" width="1522" height="900" />
     </state>
     <state width="1397" height="449" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1608223296226" />
-    <state width="1479" height="319" key="GridCell.Tab.0.bottom/78.0.1522.900@78.0.1522.900" timestamp="1608118722506" />
-    <state width="1397" height="449" key="GridCell.Tab.0.center" timestamp="1608223296226">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="739" height="236" key="GridCell.Tab.0.bottom/78.0.1522.900@78.0.1522.900" timestamp="1608288493714" />
+    <state width="739" height="236" key="GridCell.Tab.0.center" timestamp="1608288493714">
+      <screen x="78" y="0" width="1522" height="900" />
     </state>
     <state width="1397" height="449" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1608223296226" />
-    <state width="1479" height="319" key="GridCell.Tab.0.center/78.0.1522.900@78.0.1522.900" timestamp="1608118722505" />
-    <state width="1397" height="449" key="GridCell.Tab.0.left" timestamp="1608223296226">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="739" height="236" key="GridCell.Tab.0.center/78.0.1522.900@78.0.1522.900" timestamp="1608288493714" />
+    <state width="739" height="236" key="GridCell.Tab.0.left" timestamp="1608288493714">
+      <screen x="78" y="0" width="1522" height="900" />
     </state>
     <state width="1397" height="449" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1608223296226" />
-    <state width="1479" height="319" key="GridCell.Tab.0.left/78.0.1522.900@78.0.1522.900" timestamp="1608118722505" />
-    <state width="1397" height="449" key="GridCell.Tab.0.right" timestamp="1608223296226">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state width="739" height="236" key="GridCell.Tab.0.left/78.0.1522.900@78.0.1522.900" timestamp="1608288493714" />
+    <state width="739" height="236" key="GridCell.Tab.0.right" timestamp="1608288493714">
+      <screen x="78" y="0" width="1522" height="900" />
     </state>
     <state width="1397" height="449" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1608223296226" />
-    <state width="1479" height="319" key="GridCell.Tab.0.right/78.0.1522.900@78.0.1522.900" timestamp="1608118722505" />
+    <state width="739" height="236" key="GridCell.Tab.0.right/78.0.1522.900@78.0.1522.900" timestamp="1608288493714" />
     <state width="1397" height="449" key="GridCell.Tab.1.bottom" timestamp="1608223296226">
       <screen x="0" y="0" width="1440" height="860" />
     </state>

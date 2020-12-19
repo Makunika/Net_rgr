@@ -69,14 +69,14 @@ namespace Net_rgr
             {
                 object obj = this.filmsDataGridView.DataSource;
                 this.filmsDataGridView.DataSource = null;
-                using (var con = new SqlConnection(Properties.Settings.Default.rgrNetConnectionString))
-                using (var cmd = new SqlCommand())
-                {
-                    cmd.CommandText = "DELETE FROM Animal";
-                    cmd.Connection = con;
-                    con.Open();
-                    int numberDeleted = cmd.ExecuteNonQuery();  // all rows deleted
-                }
+                //using (var con = new SqlConnection(Properties.Settings.Default.rgrNetConnectionString))
+                //using (var cmd = new SqlCommand())
+                //{
+                //    cmd.CommandText = "DELETE FROM Animal";
+                //    cmd.Connection = con;
+                //    con.Open();
+                //    int numberDeleted = cmd.ExecuteNonQuery();  // all rows deleted
+                //}
                 await Task.Run(() =>
                 {
                     AnimalsUpdater animalsUpdater = new AnimalsUpdater(rgrNetDataSet.Animal, progress, formCount.CountAnimal);
