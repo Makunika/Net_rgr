@@ -24,19 +24,24 @@
   <component name="ChangeListManager">
     <list default="true" id="2a795e18-65d9-4e68-94e9-15d2da67246e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Net_rgr/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Net_rgr/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Net_rgr/.idea/dataSources/39a6e356-287e-46d2-98f2-45627ba531e1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Net_rgr/.idea/dataSources/39a6e356-287e-46d2-98f2-45627ba531e1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Net_rgr/.idea/dataSources/39a6e356-287e-46d2-98f2-45627ba531e1/storage_v2/_src_/database/master.YiqNvw/schema/dbo.sYMBAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Net_rgr/.idea/dataSources/39a6e356-287e-46d2-98f2-45627ba531e1/storage_v2/_src_/database/master.YiqNvw/schema/dbo.sYMBAA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Net_rgr/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Net_rgr/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/Net_rgr/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Net_rgr/v16/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_rgr/App.config" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/App.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Net_rgr/FormMain.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/FormMain.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Net_rgr/FormMain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/FormMain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Net_rgr/FormMain.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/FormMain.resx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_rgr/Modules/AnimalsUpdater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/Modules/AnimalsUpdater.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_rgr/Properties/Settings.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/Properties/Settings.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_rgr/Properties/Settings.settings" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/Properties/Settings.settings" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_rgr/bin/Debug/Net_rgr.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/bin/Debug/Net_rgr.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_rgr/bin/Debug/Net_rgr.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/bin/Debug/Net_rgr.exe.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_rgr/bin/Debug/Net_rgr.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/bin/Debug/Net_rgr.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Net_rgr/obj/Debug/DesignTimeResolveAssemblyReferences.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/obj/Debug/DesignTimeResolveAssemblyReferences.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.csproj.GenerateResource.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.csprojAssemblyReference.cache" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/obj/Debug/Net_rgr.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_rgr/obj/Debug/TempPE/rgrNetDataSet.Designer.cs.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Net_rgr/obj/Debug/TempPE/rgrNetDataSet.Designer.cs.dll" afterDir="false" />
@@ -55,6 +60,7 @@
         <option value="$PROJECT_DIR$/Net_rgr/Program.cs" />
         <option value="$PROJECT_DIR$/Net_rgr/Properties/Settings.settings" />
         <option value="$PROJECT_DIR$/Net_rgr/Modules/AnimalsUpdater.cs" />
+        <option value="$PROJECT_DIR$/Net_rgr/FormMain.cs" />
       </list>
     </option>
   </component>
@@ -70,6 +76,7 @@
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.29941434" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -104,6 +111,7 @@
       <workItem from="1608219932688" duration="3265000" />
       <workItem from="1608239914518" duration="38000" />
       <workItem from="1608287782326" duration="709000" />
+      <workItem from="1608837480934" duration="853000" />
     </task>
     <servers />
   </component>
@@ -240,13 +248,17 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="554" y="145" key="RiderGenerateDialog/0.0.1440.860@0.0.1440.860" timestamp="1608220821434" />
+    <state x="221" y="74" key="SettingsEditor" timestamp="1608837672629">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="221" y="74" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1608837672629" />
     <state width="728" height="438" key="XDebugger.FullValuePopup" timestamp="1608221274264">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="728" height="438" key="XDebugger.FullValuePopup/0.0.1440.860@0.0.1440.860" timestamp="1608221274264" />
-    <state x="578" y="133" width="581" height="632" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1608223244325">
+    <state x="578" y="133" width="581" height="632" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1608837744665">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="578" y="133" width="581" height="632" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1440.860@0.0.1440.860" timestamp="1608223244325" />
+    <state x="578" y="133" width="581" height="632" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1440.860@0.0.1440.860" timestamp="1608837744665" />
   </component>
 </project>

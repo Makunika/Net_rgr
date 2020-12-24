@@ -20,6 +20,32 @@ namespace Net_rgr
         {
             InitializeComponent();
             progressBarDownload.Value = 0;
+            nameTextBox.Validating += NameTextBox_Validating;
+            aboutTextBox.Validating += AboutTextBox_Validating;
+        }
+
+        private void AboutTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(nameTextBox.Text))
+            {
+                errorProviderName.SetError(nameTextBox, "Не указано название!");
+            }
+            else
+            {
+                errorProviderName.Clear();
+            }
+        }
+
+        private void NameTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (String.IsNullOrEmpty(aboutTextBox.Text))
+            {
+                errorProviderAbout.SetError(aboutTextBox, "Не указано описание!");
+            }
+            else
+            {
+                errorProviderAbout.Clear();
+            }
         }
 
         private void FormMain_Load(object sender, EventArgs e)
@@ -56,38 +82,33 @@ namespace Net_rgr
             }
         }
 
-        private void LoadData_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private async void загрузитьВТаблицуДанныеИзВнешнегоИсточникаToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Вызываем форму с выбором количества животных
             FormCount formCount = new FormCount();
             var progress = new Progress<int>(i => progressBarDownload.Value = i);
             if (formCount.ShowDialog() == DialogResult.OK)
             {
-                object obj = this.filmsDataGridView.DataSource;
-                this.filmsDataGridView.DataSource = null;
-                //using (var con = new SqlConnection(Properties.Settings.Default.rgrNetConnectionString))
-                //using (var cmd = new SqlCommand())
-                //{
-                //    cmd.CommandText = "DELETE FROM Animal";
-                //    cmd.Connection = con;
-                //    con.Open();
-                //    int numberDeleted = cmd.ExecuteNonQuery();  // all rows deleted
-                //}
+                toolStripStatusLabelDownload.Text = "Загрузка...";
+                //Для облегчения работы сбрасываем на время update DataSource из DataGrip
+                object obj = this.animalsDataGridView.DataSource;
+                this.animalsDataGridView.DataSource = null;
+                //Вызывем updater в асинхронном варианте
                 await Task.Run(() =>
                 {
                     AnimalsUpdater animalsUpdater = new AnimalsUpdater(rgrNetDataSet.Animal, progress, formCount.CountAnimal);
                     animalsUpdater.DoWork();
                 });
+                //Возвращает DataSource
                 this.animalBindingSource.EndEdit();
-                this.filmsDataGridView.DataSource = obj;
+                this.animalsDataGridView.DataSource = obj;
                 this.animalBindingSource.EndEdit();
+                //Загружаем из таблицы данные в базу данных
                 this.animalTableAdapter.Update(this.rgrNetDataSet.Animal);
+                //Заполняем из базы данных DataGrip
                 this.animalTableAdapter.Fill(this.rgrNetDataSet.Animal);
                 progressBarDownload.Value = 0;
+                toolStripStatusLabelDownload.Text = "Загрузка завершена!";
             }
         }
 
@@ -103,8 +124,19 @@ namespace Net_rgr
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            this.animalBindingSource.EndEdit();
-            this.animalTableAdapter.Update(this.rgrNetDataSet.Animal);
+            if (this.ValidateChildren())
+            {
+                try
+                {
+                    this.animalBindingSource.EndEdit();
+                    this.animalTableAdapter.Update(this.rgrNetDataSet.Animal);
+                }
+                catch (SqlException)
+                {
+                    toolStripStatusLabelDownload.Text = "Такое животное уже есть в базе данных!";
+                }
+
+            }
         }
     }
 }

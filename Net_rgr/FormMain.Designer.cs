@@ -35,7 +35,14 @@ namespace Net_rgr
             System.Windows.Forms.Label loginLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.filmsDataGridView = new System.Windows.Forms.DataGridView();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.progressBarDownload = new System.Windows.Forms.ToolStripProgressBar();
+            this.animalsDataGridView = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aboutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.animalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rgrNetDataSet = new Net_rgr.rgrNetDataSet();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
@@ -49,26 +56,22 @@ namespace Net_rgr
             this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.aboutTextBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.загрузитьИзФайлаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьВФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loginTextBox = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.базаДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрухитьТаблицуФильмыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.загрузитьВТаблицуДанныеИзВнешнегоИсточникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.загрузитьВТаблицуДанныеИзВнешнегоИсточникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aboutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.animalBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rgrNetDataSet = new Net_rgr.rgrNetDataSet();
             this.animalTableAdapter = new Net_rgr.rgrNetDataSetTableAdapters.AnimalTableAdapter();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.progressBarDownload = new System.Windows.Forms.ToolStripProgressBar();
+            this.errorProviderName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderAbout = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolStripStatusLabelDownload = new System.Windows.Forms.ToolStripStatusLabel();
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             loginLabel = new System.Windows.Forms.Label();
@@ -76,15 +79,17 @@ namespace Net_rgr
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsDataGridView)).BeginInit();
+            this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.animalsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.animalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgrNetDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.animalBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgrNetDataSet)).BeginInit();
-            this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAbout)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -124,36 +129,81 @@ namespace Net_rgr
             // 
             this.splitContainer1.Panel1.AutoScroll = true;
             this.splitContainer1.Panel1.Controls.Add(this.statusStrip1);
-            this.splitContainer1.Panel1.Controls.Add(this.filmsDataGridView);
+            this.splitContainer1.Panel1.Controls.Add(this.animalsDataGridView);
             this.splitContainer1.Panel1.Controls.Add(this.bindingNavigator1);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.AutoScroll = true;
-            this.splitContainer1.Panel2.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel2.Controls.Add(this.aboutTextBox);
             this.splitContainer1.Panel2.Controls.Add(label2);
             this.splitContainer1.Panel2.Controls.Add(label1);
             this.splitContainer1.Panel2.Controls.Add(this.pictureBox1);
-            this.splitContainer1.Panel2.Controls.Add(this.loginTextBox);
+            this.splitContainer1.Panel2.Controls.Add(this.nameTextBox);
             this.splitContainer1.Panel2.Controls.Add(loginLabel);
             this.splitContainer1.Size = new System.Drawing.Size(981, 480);
             this.splitContainer1.SplitterDistance = 501;
             this.splitContainer1.TabIndex = 2;
             // 
-            // filmsDataGridView
+            // statusStrip1
             // 
-            this.filmsDataGridView.AutoGenerateColumns = false;
-            this.filmsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.filmsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.progressBarDownload,
+            this.toolStripStatusLabelDownload});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 459);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(501, 21);
+            this.statusStrip1.TabIndex = 4;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // progressBarDownload
+            // 
+            this.progressBarDownload.Name = "progressBarDownload";
+            this.progressBarDownload.Size = new System.Drawing.Size(100, 16);
+            // 
+            // animalsDataGridView
+            // 
+            this.animalsDataGridView.AutoGenerateColumns = false;
+            this.animalsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.animalsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.aboutDataGridViewTextBoxColumn});
-            this.filmsDataGridView.DataSource = this.animalBindingSource;
-            this.filmsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.filmsDataGridView.Location = new System.Drawing.Point(0, 25);
-            this.filmsDataGridView.Name = "filmsDataGridView";
-            this.filmsDataGridView.Size = new System.Drawing.Size(501, 455);
-            this.filmsDataGridView.TabIndex = 3;
+            this.animalsDataGridView.DataSource = this.animalBindingSource;
+            this.animalsDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.animalsDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.animalsDataGridView.Name = "animalsDataGridView";
+            this.animalsDataGridView.Size = new System.Drawing.Size(501, 434);
+            this.animalsDataGridView.TabIndex = 3;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // aboutDataGridViewTextBoxColumn
+            // 
+            this.aboutDataGridViewTextBoxColumn.DataPropertyName = "about";
+            this.aboutDataGridViewTextBoxColumn.HeaderText = "Описание";
+            this.aboutDataGridViewTextBoxColumn.Name = "aboutDataGridViewTextBoxColumn";
+            // 
+            // animalBindingSource
+            // 
+            this.animalBindingSource.DataMember = "Animal";
+            this.animalBindingSource.DataSource = this.rgrNetDataSet;
+            // 
+            // rgrNetDataSet
+            // 
+            this.rgrNetDataSet.DataSetName = "rgrNetDataSet";
+            this.rgrNetDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigator1
             // 
@@ -275,15 +325,15 @@ namespace Net_rgr
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
-            // textBox1
+            // aboutTextBox
             // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.animalBindingSource, "about", true));
-            this.textBox1.Location = new System.Drawing.Point(68, 41);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(385, 156);
-            this.textBox1.TabIndex = 27;
+            this.aboutTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.animalBindingSource, "about", true));
+            this.aboutTextBox.Location = new System.Drawing.Point(68, 41);
+            this.aboutTextBox.Multiline = true;
+            this.aboutTextBox.Name = "aboutTextBox";
+            this.aboutTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.aboutTextBox.Size = new System.Drawing.Size(385, 156);
+            this.aboutTextBox.TabIndex = 27;
             // 
             // pictureBox1
             // 
@@ -319,13 +369,13 @@ namespace Net_rgr
             this.сохранитьВФайлToolStripMenuItem.Text = "Сохранить в файл";
             this.сохранитьВФайлToolStripMenuItem.Click += new System.EventHandler(this.сохранитьВФайлToolStripMenuItem_Click);
             // 
-            // loginTextBox
+            // nameTextBox
             // 
-            this.loginTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.animalBindingSource, "name", true));
-            this.loginTextBox.Location = new System.Drawing.Point(68, 9);
-            this.loginTextBox.Name = "loginTextBox";
-            this.loginTextBox.Size = new System.Drawing.Size(385, 20);
-            this.loginTextBox.TabIndex = 17;
+            this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.animalBindingSource, "name", true));
+            this.nameTextBox.Location = new System.Drawing.Point(68, 9);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(385, 20);
+            this.nameTextBox.TabIndex = 17;
             // 
             // menuStrip1
             // 
@@ -351,8 +401,15 @@ namespace Net_rgr
             // 
             this.загрухитьТаблицуФильмыToolStripMenuItem.Name = "загрухитьТаблицуФильмыToolStripMenuItem";
             this.загрухитьТаблицуФильмыToolStripMenuItem.Size = new System.Drawing.Size(363, 22);
-            this.загрухитьТаблицуФильмыToolStripMenuItem.Text = "Загрузить таблицу из бд";
+            this.загрухитьТаблицуФильмыToolStripMenuItem.Text = "Загрузить таблицу из базы данных";
             this.загрухитьТаблицуФильмыToolStripMenuItem.Click += new System.EventHandler(this.загрухитьТаблицуФильмыToolStripMenuItem_Click);
+            // 
+            // загрузитьВТаблицуДанныеИзВнешнегоИсточникаToolStripMenuItem
+            // 
+            this.загрузитьВТаблицуДанныеИзВнешнегоИсточникаToolStripMenuItem.Name = "загрузитьВТаблицуДанныеИзВнешнегоИсточникаToolStripMenuItem";
+            this.загрузитьВТаблицуДанныеИзВнешнегоИсточникаToolStripMenuItem.Size = new System.Drawing.Size(363, 22);
+            this.загрузитьВТаблицуДанныеИзВнешнегоИсточникаToolStripMenuItem.Text = "Загрузить в таблицу данные из внешнего источника";
+            this.загрузитьВТаблицуДанныеИзВнешнегоИсточникаToolStripMenuItem.Click += new System.EventHandler(this.загрузитьВТаблицуДанныеИзВнешнегоИсточникаToolStripMenuItem_Click);
             // 
             // файлToolStripMenuItem
             // 
@@ -365,64 +422,26 @@ namespace Net_rgr
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
-            // 
-            // загрузитьВТаблицуДанныеИзВнешнегоИсточникаToolStripMenuItem
-            // 
-            this.загрузитьВТаблицуДанныеИзВнешнегоИсточникаToolStripMenuItem.Name = "загрузитьВТаблицуДанныеИзВнешнегоИсточникаToolStripMenuItem";
-            this.загрузитьВТаблицуДанныеИзВнешнегоИсточникаToolStripMenuItem.Size = new System.Drawing.Size(363, 22);
-            this.загрузитьВТаблицуДанныеИзВнешнегоИсточникаToolStripMenuItem.Text = "Загрузить в таблицу данные из внешнего источника";
-            this.загрузитьВТаблицуДанныеИзВнешнегоИсточникаToolStripMenuItem.Click += new System.EventHandler(this.загрузитьВТаблицуДанныеИзВнешнегоИсточникаToolStripMenuItem_Click);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // aboutDataGridViewTextBoxColumn
-            // 
-            this.aboutDataGridViewTextBoxColumn.DataPropertyName = "about";
-            this.aboutDataGridViewTextBoxColumn.HeaderText = "Описание";
-            this.aboutDataGridViewTextBoxColumn.Name = "aboutDataGridViewTextBoxColumn";
-            // 
-            // animalBindingSource
-            // 
-            this.animalBindingSource.DataMember = "Animal";
-            this.animalBindingSource.DataSource = this.rgrNetDataSet;
-            // 
-            // rgrNetDataSet
-            // 
-            this.rgrNetDataSet.DataSetName = "rgrNetDataSet";
-            this.rgrNetDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // animalTableAdapter
             // 
             this.animalTableAdapter.ClearBeforeFill = true;
             // 
-            // statusStrip1
+            // errorProviderName
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.progressBarDownload});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 458);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(501, 22);
-            this.statusStrip1.TabIndex = 4;
-            this.statusStrip1.Text = "statusStrip1";
+            this.errorProviderName.ContainerControl = this;
             // 
-            // progressBarDownload
+            // errorProviderAbout
             // 
-            this.progressBarDownload.Name = "progressBarDownload";
-            this.progressBarDownload.Size = new System.Drawing.Size(100, 16);
-            this.progressBarDownload.Value = 50;
+            this.errorProviderAbout.ContainerControl = this;
+            // 
+            // toolStripStatusLabelDownload
+            // 
+            this.toolStripStatusLabelDownload.Name = "toolStripStatusLabelDownload";
+            this.toolStripStatusLabelDownload.Size = new System.Drawing.Size(0, 17);
             // 
             // FormMain
             // 
@@ -432,7 +451,7 @@ namespace Net_rgr
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.splitContainer1);
             this.Name = "FormMain";
-            this.Text = "FormMain";
+            this.Text = "РГР";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -440,7 +459,11 @@ namespace Net_rgr
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.filmsDataGridView)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.animalsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.animalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rgrNetDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
@@ -448,10 +471,8 @@ namespace Net_rgr
             this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.animalBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rgrNetDataSet)).EndInit();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderAbout)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -460,7 +481,7 @@ namespace Net_rgr
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.DataGridView filmsDataGridView;
+        private System.Windows.Forms.DataGridView animalsDataGridView;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem1;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem1;
@@ -474,9 +495,9 @@ namespace Net_rgr
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator5;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox aboutTextBox;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox loginTextBox;
+        private System.Windows.Forms.TextBox nameTextBox;
         private rgrNetDataSet rgrNetDataSet;
         private System.Windows.Forms.BindingSource animalBindingSource;
         private rgrNetDataSetTableAdapters.AnimalTableAdapter animalTableAdapter;
@@ -494,5 +515,8 @@ namespace Net_rgr
         private System.Windows.Forms.ToolStripMenuItem загрузитьВТаблицуДанныеИзВнешнегоИсточникаToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripProgressBar progressBarDownload;
+        private System.Windows.Forms.ErrorProvider errorProviderName;
+        private System.Windows.Forms.ErrorProvider errorProviderAbout;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelDownload;
     }
 }
